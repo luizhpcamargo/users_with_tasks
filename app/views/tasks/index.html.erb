@@ -1,0 +1,21 @@
+
+<h1>Tasks</h1>
+<%= link_to 'New task', new_user_task_path(@user), :class => 'btn btn-primary' %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.description, [@user, task] %></td>
+        <td><%= task.start_date %></td>
+        <td><%= task.end_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

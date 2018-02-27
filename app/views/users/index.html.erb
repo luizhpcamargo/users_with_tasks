@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<%= simple_form_for @user, url: signin_users_path, method: :post do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+
+  <%= f.button :submit, 'Login' %>
+<% end %>
+<%= link_to "Sign up", signup_users_path %>

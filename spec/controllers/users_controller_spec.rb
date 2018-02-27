@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :controller do
     it do
       expect(user.valid?).to be_truthy
       post :signin, params: { user: { email: 'test@email.com', password: 'test' } }
-      expect(response).to render_template(:logged)
+      expect(response).to render_template('tasks/index')
     end
 
     it do

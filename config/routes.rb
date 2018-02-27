@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create] do
     collection do
       post :signin
-      post :signup
+      get :signup
     end
+    resources :tasks
   end
 end

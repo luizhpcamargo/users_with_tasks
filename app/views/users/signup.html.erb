@@ -1,0 +1,10 @@
+<h1>Sign up</h1>
+<%= simple_form_for @user do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.button :submit, 'Register' %>
+<% end %>
+<%= link_to "Go back", root_path %>
