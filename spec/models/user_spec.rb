@@ -33,5 +33,12 @@ RSpec.describe User, type: :model do
       expect(invalid_email.valid?).to be_falsey
       expect(invalid_email.errors[:email]).to include 'is invalid'
     end
+
+    it do
+      valid_email.save
+      user = valid_email.dup
+      expect(user.valid?).to be_falsey
+      expect(user.errors[:email]).to include 'has already been taken'
+    end
   end
 end
